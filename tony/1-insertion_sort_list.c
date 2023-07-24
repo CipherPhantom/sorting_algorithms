@@ -1,6 +1,5 @@
 #include "sort.h"
 
-
 /**
  * swap_two_nodes - This function swaps the position
  * of two given nodes in a DLL.
@@ -33,9 +32,8 @@ void swap_two_nodes(listint_t *n1, listint_t *n2, listint_t **list)
 
 
 /**
- * insertion_sort - This function sorts a doubly
- * linked list in ascending order,
- * using the insertion sort algorithm.
+ * insertion_sort_list - This function sorts a doubly
+ * linked list in ascending order, using the insertion sort algorithm.
  * @list: Pointer to head of doubly linked list
  */
 
