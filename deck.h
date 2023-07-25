@@ -1,9 +1,19 @@
+#ifndef _DECK_H_
+#define _DECK_H_
+
+/**
+ * enum kind_e - Number representation of card.
+ * @SPADE: 0
+ * @HEART: 1
+ * @CLUB: 2
+ * @DIAMOND: 3
+ */
 typedef enum kind_e
 {
-    SPADE = 0,
-    HEART,
-    CLUB,
-    DIAMOND
+	SPADE = 0,
+	HEART,
+	CLUB,
+	DIAMOND
 } kind_t;
 
 /**
@@ -15,8 +25,8 @@ typedef enum kind_e
  */
 typedef struct card_s
 {
-    const char *value;
-    const kind_t kind;
+	const char *value;
+	const kind_t kind;
 } card_t;
 
 /**
@@ -28,7 +38,9 @@ typedef struct card_s
  */
 typedef struct deck_node_s
 {
-    const card_t *card;
-    struct deck_node_s *prev;
-    struct deck_node_s *next;
+	const card_t *card;
+	struct deck_node_s *prev;
+	struct deck_node_s *next;
 } deck_node_t;
+
+#endif /* _DECK_H_ */
