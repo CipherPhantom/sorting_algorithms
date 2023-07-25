@@ -30,8 +30,8 @@ void quick_sort_recursion(int *array, size_t size, int low, int high)
 	if (low < high)
 	{
 		pivot_index = partition(array, size, low, high);
-		quick_sort_recursion(array, size, low, pivot_index);
-		quick_sort_recursion(array, size, pivot_index + 1, high);
+		quick_sort_recursion(array, size, low, pivot_index - 1);
+		quick_sort_recursion(array, size, pivot_index, high);
 	}
 }
 
@@ -60,11 +60,14 @@ size_t partition(int *array, size_t size, size_t low, size_t high)
 			j--;
 		} while (array[j] > pivot_value);
 
-		if (i > j)
-			return (j);
+		if (i < j)
+		{
 		tmp = array[i];
 		array[i] = array[j];
 		array[j] = tmp;
 		print_array(array, size);
+		}
+		else
+			return (i);
 	}
 }
