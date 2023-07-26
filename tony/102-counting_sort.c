@@ -69,7 +69,7 @@ void counting_sort(int *array, size_t size)
 	size_t i = 0;
 	int elem, max_num = 0, *count_array = NULL, *new_array = NULL;
 
-	if (!array || !size)
+	if (!array || size < 2)
 		return;
 
 	max_num = find_max(array, size);
@@ -86,7 +86,7 @@ void counting_sort(int *array, size_t size)
 
 		print_array(count_array, max_num + 1);
 
-		for (i = 0; i < size; i++)
+		for (i = size - 1; (int)i >= 0; i--)
 		{
 			elem = array[i];
 			count_array[elem]--;
